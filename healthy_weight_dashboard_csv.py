@@ -211,7 +211,7 @@ st.header("5️⃣ Meal Photo Journal")
 if not meal_logs.empty:
     for _, row in meal_logs[::-1].iterrows():
         photo_url = row.get("photo_url", "")
-        caption = f"{row.get('meal','')} - {row.get('date','')} ({row.get('portion','')})\"
+        caption = f"{row.get('meal','')} - {row.get('date','')} ({row.get('portion','')})"
         if isinstance(photo_url, str) and photo_url.startswith("http"):
             st.image(photo_url, caption=caption, use_column_width=True)
         elif isinstance(photo_url, str) and os.path.exists(photo_url):
